@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Player Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="leaf-container">
+        <div class="leaf">🍂</div>
+        <div class="leaf">🍁</div>
+        <div class="leaf">🌾</div>
+        <div class="leaf">🍂</div>
+        <div class="leaf">🍁</div>
+    </div>
+
+    <div class="card">
+        <h2>2 Player Mode</h2>
+
+        <!-- Step 1: Player 1 sets secret number -->
+        <div id="setupSection">
+            <p class="subtitle"><strong>Player 1:</strong> Enter a secret number</p>
+            <div class="input-group">
+                <input type="password" id="secretNum" placeholder="Enter secret number">
+                <button class="btn" onclick="setSecretNumber()">Lock In Number</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Player 2 guesses secret number -->
+        <div id="guessSection" style="display: none;">
+            <p class="subtitle"><strong>Player 2:</strong> Guess the secret number!</p>
+
+            <div class="timer-box" id="timerDisplay">
+                <span>⏱️ Time Remaining:</span>
+                <span id="timeLeft">30s</span>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="player2Guess" placeholder="Enter your guess">
+                <button class="btn" id="submitBtn" onclick="makeTwoPlayerGuess()">Submit Guess</button>
+            </div>
+        </div>
+
+        <p id="feedback" class="feedback"></p>
+        <a href="index.html" class="btn btn-secondary">← Main Menu</a>
+    </div>
+
+    <script src="guessingGame.js"></script>
+</body>
+</html>
